@@ -10,7 +10,7 @@
       {"clash_mode": "direct", "server": "local"},
       {"clash_mode": "global", "server": "fakeip"},
       {"query_type": "HTTPS", "action": "reject"},
-      {"rule_set": ["ads"], "action": "reject"},
+      {"rule_set": ["ads", "antiad"], "action": "reject"},
       {"rule_set": "geosite-fakeipfilter", "server": "local"},
       {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1},
       {"rule_set": "geosite-cn", "server": "local"}
@@ -35,12 +35,12 @@
     {"tag": "🐬 OneDrive", "type": "selector", "outbounds": ["🎯 全球直连", "🇭🇰 香港自动", "🇯🇵 日本自动", "🇸🇬 狮城自动", "🇺🇲 美国自动"]},
     {"tag": "🍏 Apple", "type": "selector", "outbounds": ["🎯 全球直连", "🇭🇰 香港自动", "🇯🇵 日本自动", "🇸🇬 狮城自动", "🇺🇲 美国自动"]},
     {"tag": "🐠 漏网之鱼", "type": "selector", "outbounds": ["🚀 默认代理", "🎯 全球直连"]},
-    {"tag": "🇭🇰 香港自动", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "60m", "tolerance": 50},
-    {"tag": "🇯🇵 日本自动", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "60m", "tolerance": 50},
-    {"tag": "🇸🇬 狮城自动", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "60m", "tolerance": 50},
-    {"tag": "🇺🇲 美国自动", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "60m", "tolerance": 50},
+    {"tag": "🇭🇰 香港自动", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "20m", "tolerance": 50},
+    {"tag": "🇯🇵 日本自动", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "20m", "tolerance": 50},
+    {"tag": "🇸🇬 狮城自动", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "20m", "tolerance": 50},
+    {"tag": "🇺🇲 美国自动", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "20m", "tolerance": 50},
     {"tag": "🐸 手动选择", "type": "selector", "outbounds": []},
-    {"tag": "♻️ 自动选择", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "60m", "tolerance": 50},
+    {"tag": "♻️ 自动选择", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "20m", "tolerance": 50},
     {"tag": "🍃 延迟辅助", "type": "urltest", "outbounds": ["🚀 默认代理", "🎯 全球直连"]},
     {"tag": "GLOBAL", "type": "selector", "outbounds": ["🚀 默认代理", "🧠 AI", "📹 YouTube", "🍀 Google", "👨‍💻 Github", "📲 Telegram", "🎵 TikTok", "🎥 Netflix", "💶 PayPal", "🎮 Steam", "🪟 Microsoft", "🐬 OneDrive", "🍏 Apple", "🐠 漏网之鱼", "🇭🇰 香港自动", "🇯🇵 日本自动", "🇸🇬 狮城自动", "🇺🇲 美国自动", "🐸 手动选择", "♻️ 自动选择", "🍃 延迟辅助", "🎯 全球直连"]},
     {"tag": "🎯 全球直连", "type": "direct"}
@@ -95,7 +95,8 @@
       {"tag": "geoip-telegram", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs", "download_detour": "🎯 全球直连"},
       {"tag": "geoip-netflix", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs", "download_detour": "🎯 全球直连"},
       {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://github.com/qljsyph/ruleset-icon/raw/refs/heads/main/sing-box/geoip/China-ASN-combined-ip.srs", "download_detour": "🎯 全球直连"},
-      {"tag": "ads", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/REIJI007/AdBlock_Rule_For_Sing-box/main/adblock_reject.srs", "download_detour": "🎯 全球直连"}
+      {"tag": "ads", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/REIJI007/AdBlock_Rule_For_Sing-box/main/adblock_reject.srs", "download_detour": "🎯 全球直连"},
+      {"tag": "antiad", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/lilei-hanmeimei/rule/refs/heads/main/adguard_dns_filter.srs", "download_detour": "🎯 全球直连"}
     ],
     "final": "🐠 漏网之鱼",
     "default_domain_resolver": {"server": "public"}
